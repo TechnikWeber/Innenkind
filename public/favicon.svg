@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Innenkind">
+  <rect width="64" height="64" rx="14" fill="#8a4a66"/>
+  <path d="M17 50 C17 30 23 18 32 18 C41 18 47 30 47 50" fill="none" stroke="#fbf8f5" stroke-width="3.2" stroke-linecap="round" opacity="0.6"/>
+  <circle cx="32" cy="36" r="5.2" fill="#fbf8f5"/>
+  <path d="M24.5 51 C24.5 45 27.8 42.5 32 42.5 C36.2 42.5 39.5 45 39.5 51 Z" fill="#fbf8f5"/>
+</svg>
