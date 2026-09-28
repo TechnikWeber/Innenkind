@@ -1,7 +1,7 @@
 import type { L10n } from './types';
 
 /**
- * Krisen- und Beratungsnummern. Stand: 2026-09-28.
+ * Krisen- und Beratungsnummern. Stand: 2026-09-28, jede Nummer auf der Seite des Anbieters geprüft.
  * Vor Änderungen an der Seite des jeweiligen Anbieters prüfen.
  */
 export interface HelpLine {
@@ -27,14 +27,15 @@ export const helpRegions: HelpRegion[] = [
     name: { de: 'Deutschland', en: 'Germany' },
     lines: [
       { name: { de: 'Notruf', en: 'Emergency' }, number: '112', tel: '112', note: { de: 'Bei akuter Gefahr für dich oder andere.', en: 'In acute danger to yourself or others.' } },
-      { name: { de: 'Telefonseelsorge', en: 'Telefonseelsorge (crisis line)' }, number: '0800 111 0 111', tel: '08001110111', note: { de: 'Kostenlos, anonym, rund um die Uhr. Auch per Chat und Mail.', en: 'Free, anonymous, 24/7. Also via chat and e-mail.' }, url: 'https://online.telefonseelsorge.de/' },
+      { name: { de: 'Telefonseelsorge', en: 'Telefonseelsorge (crisis line)' }, number: '0800 111 0 111', tel: '08001110111', note: { de: 'Kostenlos, anonym, rund um die Uhr. Auch per Chat und Mail.', en: 'Free, anonymous, 24/7. Also via chat and e-mail.' }, url: 'https://www.telefonseelsorge.de/chat/' },
       { name: { de: 'Telefonseelsorge (zweite Nummer)', en: 'Telefonseelsorge (second number)' }, number: '0800 111 0 222', tel: '08001110222', note: { de: 'Wie oben – falls die erste besetzt ist.', en: 'As above — if the first is busy.' } },
       { name: { de: 'Telefonseelsorge (europäische Nummer)', en: 'Telefonseelsorge (European number)' }, number: '116 123', tel: '116123', note: { de: 'Kostenlos, rund um die Uhr.', en: 'Free, 24/7.' } },
       { name: { de: 'Ärztlicher Bereitschaftsdienst', en: 'Out-of-hours medical service' }, number: '116 117', tel: '116117', note: { de: 'Außerhalb der Praxiszeiten. Über dieselbe Nummer vermittelt die Terminservicestelle auch psychotherapeutische Sprechstunden.', en: 'Outside surgery hours. The same number also arranges psychotherapy consultations via the appointment service.' }, url: 'https://www.116117.de/' },
-      { name: { de: 'Hilfetelefon Sexueller Missbrauch', en: 'Sexual abuse helpline' }, number: '0800 22 55 530', tel: '08002255530', note: { de: 'Kostenlos und anonym, für Betroffene und Angehörige.', en: 'Free and anonymous, for survivors and relatives.' }, url: 'https://www.hilfe-portal-missbrauch.de/' },
-      { name: { de: 'Hilfetelefon Gewalt gegen Frauen', en: 'Violence against women helpline' }, number: '116 016', tel: '116016', note: { de: 'Rund um die Uhr, in vielen Sprachen.', en: '24/7, in many languages.' }, url: 'https://www.hilfetelefon.de/' },
-      { name: { de: 'Hilfetelefon Gewalt an Männern', en: 'Violence against men helpline' }, number: '0800 123 99 00', tel: '08001239900', note: { de: 'Kostenlos, mit festen Sprechzeiten.', en: 'Free, with set hours.' }, url: 'https://www.maennerhilfetelefon.de/' },
-      { name: { de: 'Nummer gegen Kummer – Kinder und Jugendliche', en: 'Nummer gegen Kummer — children and teenagers' }, number: '116 111', tel: '116111', note: { de: 'Kostenlos und anonym.', en: 'Free and anonymous.' }, url: 'https://www.nummergegenkummer.de/' },
+      { name: { de: 'Hilfetelefon Sexueller Missbrauch', en: 'Sexual abuse helpline' }, number: '0800 22 55 530', tel: '08002255530', note: { de: 'Kostenlos und anonym, für Betroffene und Angehörige. Mo, Mi, Fr 9–14 Uhr; Di, Do 15–20 Uhr.', en: 'Free and anonymous, for survivors and relatives. Mon, Wed, Fri 9 am–2 pm; Tue, Thu 3–8 pm.' }, url: 'https://www.hilfe-portal-missbrauch.de/' },
+      { name: { de: 'Hilfetelefon Gewalt gegen Frauen', en: 'Violence against women helpline' }, number: '116 016', tel: '116016', note: { de: 'Rund um die Uhr, in 18 Sprachen.', en: '24/7, in 18 languages.' }, url: 'https://www.hilfetelefon.de/' },
+      { name: { de: 'Hilfetelefon Gewalt an Männern', en: 'Violence against men helpline' }, number: '0800 123 99 00', tel: '08001239900', note: { de: 'Kostenlos und anonym. Mo–Do 8–20 Uhr, Fr 8–15 Uhr.', en: 'Free and anonymous. Mon–Thu 8 am–8 pm, Fri 8 am–3 pm.' }, url: 'https://www.maennerhilfetelefon.de/' },
+      { name: { de: 'Nummer gegen Kummer – Kinder und Jugendliche', en: 'Nummer gegen Kummer — children and teenagers' }, number: '116 111', tel: '116111', note: { de: 'Kostenlos und anonym. Mo–Sa 14–20 Uhr.', en: 'Free and anonymous. Mon–Sat 2–8 pm.' }, url: 'https://www.nummergegenkummer.de/' },
+      { name: { de: 'Nummer gegen Kummer – Elterntelefon', en: 'Nummer gegen Kummer — parents’ line' }, number: '0800 111 0 550', tel: '08001110550', note: { de: 'Kostenlos und anonym. Mo, Mi, Fr 9–17 Uhr; Di, Do 9–19 Uhr.', en: 'Free and anonymous. Mon, Wed, Fri 9 am–5 pm; Tue, Thu 9 am–7 pm.' }, url: 'https://www.nummergegenkummer.de/' },
     ],
   },
   {
@@ -42,8 +43,8 @@ export const helpRegions: HelpRegion[] = [
     name: { de: 'Österreich', en: 'Austria' },
     lines: [
       { name: { de: 'Notruf', en: 'Emergency' }, number: '112 / 144', tel: '144', note: { de: 'Rettung', en: 'Ambulance' } },
-      { name: { de: 'Telefonseelsorge', en: 'Telefonseelsorge (crisis line)' }, number: '142', tel: '142', note: { de: 'Kostenlos, rund um die Uhr.', en: 'Free, 24/7.' }, url: 'https://www.telefonseelsorge.at/' },
-      { name: { de: 'Rat auf Draht', en: 'Rat auf Draht' }, number: '147', tel: '147', note: { de: 'Für Kinder, Jugendliche und Eltern.', en: 'For children, teenagers and parents.' }, url: 'https://www.rataufdraht.at/' },
+      { name: { de: 'Telefonseelsorge', en: 'Telefonseelsorge (crisis line)' }, number: '142', tel: '142', note: { de: 'Kostenlos, rund um die Uhr. Erscheint nicht auf der Telefonrechnung.', en: 'Free, 24/7. Does not appear on the phone bill.' }, url: 'https://www.telefonseelsorge.at/' },
+      { name: { de: 'Rat auf Draht', en: 'Rat auf Draht' }, number: '147', tel: '147', note: { de: 'Für Kinder und Jugendliche. Kostenlos, rund um die Uhr.', en: 'For children and teenagers. Free, 24/7.' }, url: 'https://www.rataufdraht.at/' },
     ],
   },
   {
@@ -51,17 +52,17 @@ export const helpRegions: HelpRegion[] = [
     name: { de: 'Schweiz', en: 'Switzerland' },
     lines: [
       { name: { de: 'Notruf', en: 'Emergency' }, number: '112 / 144', tel: '144', note: { de: 'Sanität', en: 'Ambulance' } },
-      { name: { de: 'Die Dargebotene Hand', en: 'Die Dargebotene Hand (crisis line)' }, number: '143', tel: '143', note: { de: 'Rund um die Uhr, auch per Chat.', en: '24/7, also via chat.' }, url: 'https://www.143.ch/' },
-      { name: { de: 'Pro Juventute', en: 'Pro Juventute' }, number: '147', tel: '147', note: { de: 'Für Kinder und Jugendliche.', en: 'For children and teenagers.' }, url: 'https://www.147.ch/' },
+      { name: { de: 'Die Dargebotene Hand', en: 'Die Dargebotene Hand (crisis line)' }, number: '143', tel: '143', note: { de: 'Anonym, auch per Chat und Mail. Auf Englisch: 0800 143 000, 18–23 Uhr.', en: 'Anonymous, also via chat and e-mail. In English: 0800 143 000, 6–11 pm.' }, url: 'https://www.143.ch/' },
+      { name: { de: 'Pro Juventute', en: 'Pro Juventute' }, number: '147', tel: '147', note: { de: 'Für Kinder und Jugendliche. Kostenlos, rund um die Uhr.', en: 'For children and teenagers. Free, 24/7.' }, url: 'https://www.147.ch/' },
     ],
   },
   {
     id: 'intl',
     name: { de: 'Andere Länder', en: 'Other countries' },
     lines: [
-      { name: { de: 'Vereinigtes Königreich und Irland: Samaritans', en: 'UK and Ireland: Samaritans' }, number: '116 123', tel: '116123', note: { de: 'Kostenlos, rund um die Uhr.', en: 'Free, 24/7.' }, url: 'https://www.samaritans.org/' },
-      { name: { de: 'USA: 988 Suicide & Crisis Lifeline', en: 'USA: 988 Suicide & Crisis Lifeline' }, number: '988', tel: '988', note: { de: 'Anruf oder SMS, rund um die Uhr.', en: 'Call or text, 24/7.' }, url: 'https://988lifeline.org/' },
-      { name: { de: 'Weltweit: Find A Helpline', en: 'Worldwide: Find A Helpline' }, number: 'findahelpline.com', tel: '', note: { de: 'Verzeichnis kostenloser Krisendienste in über 130 Ländern.', en: 'Directory of free crisis services in over 130 countries.' }, url: 'https://findahelpline.com/' },
+      { name: { de: 'Vereinigtes Königreich und Irland: Samaritans', en: 'UK and Ireland: Samaritans' }, number: '116 123', tel: '116123', note: { de: 'Kostenlos von jedem Telefon, rund um die Uhr.', en: 'Free from any phone, 24/7.' }, url: 'https://www.samaritans.org/' },
+      { name: { de: 'USA: 988 Suicide & Crisis Lifeline', en: 'USA: 988 Suicide & Crisis Lifeline' }, number: '988', tel: '988', note: { de: 'Anruf, SMS oder Chat, kostenlos, rund um die Uhr.', en: 'Call, text or chat, free, 24/7.' }, url: 'https://988lifeline.org/' },
+      { name: { de: 'Weltweit: Find A Helpline', en: 'Worldwide: Find A Helpline' }, number: 'findahelpline.com', tel: '', note: { de: 'Verzeichnis kostenloser Krisendienste in über 175 Ländern.', en: 'Directory of free crisis services in over 175 countries.' }, url: 'https://findahelpline.com/' },
     ],
   },
 ];
