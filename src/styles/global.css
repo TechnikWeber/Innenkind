@@ -155,10 +155,6 @@ h1:focus { outline: none; }
 .container--narrow { width: min(100% - 2 * var(--gutter), 780px); }
 .prose { max-width: var(--measure); }
 
-.stack > * + * { margin-top: var(--stack-space, 1rem); }
-.stack-lg { --stack-space: 2rem; }
-.stack-sm { --stack-space: 0.5rem; }
-
 .row { display: flex; gap: 0.6rem; flex-wrap: wrap; align-items: center; }
 .row--between { justify-content: space-between; }
 
@@ -546,10 +542,11 @@ details.explainer > div p { max-width: var(--measure); }
 
 .crisis__list { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.6rem; }
 /* Flex statt Grid: Passt die Nummer nicht mehr neben den Namen, rutscht sie
-   in die nächste Zeile, statt über den Kartenrand hinauszuragen. */
+   in die nächste Zeile, statt über den Kartenrand hinauszuragen. Rechts steht
+   sie nur, weil der Name wächst – umgebrochen steht sie links unter dem Namen. */
 .crisis__list li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 1rem; }
 .crisis__name { flex: 1 1 10rem; min-width: 0; font-weight: 500; overflow-wrap: break-word; hyphens: auto; }
-.crisis__number { margin-left: auto; max-width: 100%; font-variant-numeric: tabular-nums; font-weight: 700; white-space: nowrap; }
+.crisis__number { max-width: 100%; font-variant-numeric: tabular-nums; font-weight: 700; white-space: nowrap; }
 .crisis__note { flex-basis: 100%; min-width: 0; font-size: var(--step--1); color: var(--ink-muted); overflow-wrap: break-word; }
 
 .big-sentence { font-family: var(--font-display); font-size: var(--step-2); line-height: 1.4; color: var(--accent-strong); margin: 0; }
@@ -571,6 +568,17 @@ details.explainer > div p { max-width: var(--measure); }
 .background section[id] { scroll-margin-top: 5rem; }
 .literature { font-size: var(--step--1); color: var(--ink-muted); }
 .list li { margin-bottom: 0.5em; }
+
+/* --------------------------------------------------------------------------
+   Abstände im Stapel
+   Steht bewusst hinter allen Bausteinen: Viele setzen `margin: 0` (Frage,
+   Merksatz, Listen …) und würden den Abstand sonst bei gleicher Spezifität
+   überschreiben – dann kleben Textfeld und nächste Frage aneinander.
+   -------------------------------------------------------------------------- */
+
+.stack > * + * { margin-top: var(--stack-space, 1rem); }
+.stack-lg { --stack-space: 2rem; }
+.stack-sm { --stack-space: 0.5rem; }
 
 /* --------------------------------------------------------------------------
    Druck

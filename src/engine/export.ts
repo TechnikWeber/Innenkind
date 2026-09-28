@@ -1,4 +1,5 @@
 import type { Lang } from '../data/types';
+import { concernQuestion, goalQuestion, type Question } from '../data/questions';
 import { beliefById } from '../data/beliefs';
 import { needById } from '../data/needs';
 import { protectorById } from '../data/protectors';
@@ -23,6 +24,18 @@ export function exportText(d: SessionData, lang: Lang, now = new Date()): string
   out.push(de ? 'Innenkind – Sitzungsprotokoll' : 'Innenkind — session record');
   out.push('='.repeat(out[0].length));
   line(date.toLocaleString(de ? 'de-DE' : 'en-GB', { dateStyle: 'full', timeStyle: 'short' }));
+
+  const labels = (q: Question) =>
+    (d.choices[q.id] ?? []).map((id) => q.options.find((o) => o.id === id)?.label[lang]).filter((l): l is string => !!l);
+  const concerns = labels(concernQuestion);
+  const goals = labels(goalQuestion);
+  const concernText = (d.texts.concernText ?? '').trim();
+  if (concerns.length > 0 || concernText || goals.length > 0) {
+    h(de ? 'Anliegen' : 'What brought me here');
+    concerns.forEach((c) => line(`• ${c}`));
+    if (concernText) line(concernText);
+    goals.forEach((g) => line(`${de ? 'Ziel' : 'Goal'}: ${g}`));
+  }
 
   const scale = (label: string, a?: number, b?: number, unit = '') => {
     if (typeof a !== 'number' && typeof b !== 'number') return;
@@ -61,6 +74,7 @@ export function exportText(d: SessionData, lang: Lang, now = new Date()): string
   if (prot.length > 0) {
     h(de ? 'Beschützer' : 'Protectors');
     prot.forEach((p) => line(`• ${protectorById.get(p)!.name[lang]}`));
+    if (d.texts.protectorFear) line(`${de ? 'Was er befürchtet' : 'What it is afraid of'}: ${d.texts.protectorFear}`);
   }
 
   h(de ? 'Das innere Kind' : 'The inner child');
@@ -70,6 +84,8 @@ export function exportText(d: SessionData, lang: Lang, now = new Date()): string
   if (d.texts.childScene) line(`${de ? 'Szene' : 'Scene'}: ${d.texts.childScene}`);
   if (d.texts.placeWhat) line(`${de ? 'Sicherer Ort' : 'Safe place'}: ${d.texts.placeWhat}${d.texts.placeDetails ? ` – ${d.texts.placeDetails}` : ''}`);
   if (d.texts.helperName) line(`${de ? 'Helferfigur' : 'Helper'}: ${d.texts.helperName}`);
+  if (d.texts.happyMemory) line(`${de ? 'Ein schöner Moment' : 'A happy moment'}: ${d.texts.happyMemory}`);
+  if (d.texts.situation) line(`${de ? 'Situation von heute' : 'Situation from today'}: ${d.texts.situation}`);
 
   const sentences = chosenSentences(d, lang);
   if (sentences.length > 0) {

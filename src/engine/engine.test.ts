@@ -320,6 +320,20 @@ describe('Texte aus der Sitzung', () => {
     expect(text).toContain('Wenn ich merke: Kritik');
     expect(text).not.toMatch(/\{\w+\}/);
   });
+
+  it('exportieren auch Anliegen, Ziel und die übrigen Freitexte', () => {
+    const d = session({
+      startedAt: '2026-09-28T10:00:00.000Z',
+      choices: { concern: ['selbstwert'], goal: ['ruhe'] },
+      texts: { concernText: 'Ich bin oft zu streng mit mir.', situation: 'Streit im Büro.', happyMemory: 'Sommer am See.', protectorFear: 'Dass ich ausgelacht werde.' },
+    });
+    const text = exportText(d, 'de', new Date('2026-09-28T12:00:00Z'));
+    expect(text).toContain('• Ein wackeliger Selbstwert');
+    expect(text).toContain('Ich bin oft zu streng mit mir.');
+    expect(text).toContain('Ziel: Ich bin ruhiger als vorher');
+    expect(text).toContain('Situation von heute: Streit im Büro.');
+    expect(text).toContain('Ein schöner Moment: Sommer am See.');
+  });
 });
 
 describe('Empfehlung professioneller Hilfe', () => {

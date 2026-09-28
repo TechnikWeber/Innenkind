@@ -15,7 +15,7 @@ import { Compare, WeekPlan } from './specials';
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <section className="card result-section">
+    <section className="card result-section stack">
       <h2 className="result-section__title">{title}</h2>
       {children}
     </section>
