@@ -5,6 +5,7 @@ import { exercises } from '../data/exercises';
 import { phases } from '../data/steps';
 import { Link } from './common';
 import { roundFive } from '../engine/path';
+import { SessionReset } from './SessionPage';
 
 export function HomePage() {
   const { t, lang } = useI18n();
@@ -45,6 +46,11 @@ export function HomePage() {
               {t('heroDaily')}
             </Link>
           </div>
+          {inProgress && (
+            <div style={{ marginTop: '1rem' }}>
+              <SessionReset />
+            </div>
+          )}
           <p className="muted small" style={{ marginTop: '1rem' }}>
             {t('heroPrivacy')}
           </p>

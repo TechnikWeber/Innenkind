@@ -79,6 +79,12 @@ export const ui = {
   sessionStepOf: { de: 'Schritt {a} von {b}', en: 'Step {a} of {b}' },
   sessionFinish: { de: 'Zum Sitzungsprotokoll', en: 'Go to the session record' },
   sessionResume: { de: 'Sitzung fortsetzen', en: 'Resume session' },
+  sessionReset: { de: 'Sitzung zurücksetzen', en: 'Reset session' },
+  sessionResetConfirm: {
+    de: 'Neu beginnen? Alle Antworten dieser Sitzung werden verworfen.',
+    en: 'Start over? All answers in this session will be discarded.',
+  },
+  sessionResetYes: { de: 'Ja, neu beginnen', en: 'Yes, start over' },
   sessionRestart: { de: 'Neue Sitzung beginnen', en: 'Begin a new session' },
   sessionPhases: { de: 'Phasen', en: 'Phases' },
   sessionMakeGentle: { de: 'Auf den sanften Weg wechseln', en: 'Switch to the gentle path' },

@@ -545,10 +545,12 @@ details.explainer > div p { max-width: var(--measure); }
 .hero h1 { font-size: clamp(2.2rem, 1.5rem + 3vw, 3.9rem); }
 
 .crisis__list { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.6rem; }
-.crisis__list li { display: grid; grid-template-columns: 1fr auto; gap: 0 1rem; }
-.crisis__name { font-weight: 500; }
-.crisis__number { font-variant-numeric: tabular-nums; font-weight: 700; white-space: nowrap; }
-.crisis__note { grid-column: 1 / -1; font-size: var(--step--1); color: var(--ink-muted); }
+/* Flex statt Grid: Passt die Nummer nicht mehr neben den Namen, rutscht sie
+   in die nächste Zeile, statt über den Kartenrand hinauszuragen. */
+.crisis__list li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 1rem; }
+.crisis__name { flex: 1 1 10rem; min-width: 0; font-weight: 500; overflow-wrap: break-word; hyphens: auto; }
+.crisis__number { margin-left: auto; max-width: 100%; font-variant-numeric: tabular-nums; font-weight: 700; white-space: nowrap; }
+.crisis__note { flex-basis: 100%; min-width: 0; font-size: var(--step--1); color: var(--ink-muted); overflow-wrap: break-word; }
 
 .big-sentence { font-family: var(--font-display); font-size: var(--step-2); line-height: 1.4; color: var(--accent-strong); margin: 0; }
 .sentence-cards { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.5rem; }

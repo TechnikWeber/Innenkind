@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useI18n } from '../i18n';
 import { useSession } from '../state/session';
 import { useApp } from '../state/app';
@@ -89,6 +89,46 @@ function PathSwitch() {
   );
 }
 
+/**
+ * Setzt die laufende Sitzung auf den Anfang zurück. Mit Rückfrage, weil
+ * dabei alle Antworten verloren gehen. Die Speicher-Einstellung bleibt, wie sie ist.
+ */
+export function SessionReset({ onDone }: { onDone?: () => void }) {
+  const { t } = useI18n();
+  const { reset, begin } = useSession();
+  const [confirm, setConfirm] = useState(false);
+
+  if (!confirm) {
+    return (
+      <button type="button" className="btn btn--quiet btn--danger" onClick={() => setConfirm(true)}>
+        {t('sessionReset')}
+      </button>
+    );
+  }
+  return (
+    <div className="stack stack-sm" role="group" aria-label={t('sessionReset')}>
+      <span className="small">{t('sessionResetConfirm')}</span>
+      <div className="row">
+        <button
+          type="button"
+          className="btn btn--danger"
+          onClick={() => {
+            reset(false);
+            begin();
+            setConfirm(false);
+            onDone?.();
+          }}
+        >
+          {t('sessionResetYes')}
+        </button>
+        <button type="button" className="btn btn--quiet" onClick={() => setConfirm(false)}>
+          {t('back')}
+        </button>
+      </div>
+    </div>
+  );
+}
+
 export function SessionPage() {
   const { t, lang } = useI18n();
   const f = useFill();
@@ -175,6 +215,7 @@ export function SessionPage() {
                 );
               })}
             </ol>
+            <SessionReset />
           </div>
         </aside>
       </div>
