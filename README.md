@@ -113,4 +113,4 @@ and `en` filled in; the tests will fail otherwise.
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+[MIT](LICENSE).

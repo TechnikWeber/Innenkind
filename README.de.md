@@ -119,4 +119,4 @@ fehl.
 
 ## Lizenz
 
-MIT – siehe [LICENSE](LICENSE).
+[MIT](LICENSE).
