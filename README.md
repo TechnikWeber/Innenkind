@@ -1,5 +1,3 @@
-**English** · [Deutsch](README.de.md)
-
 # Innenkind
 
 A guided, self-paced session with your inner child — in the browser, in German
@@ -80,7 +78,7 @@ explains the model, lists the research honestly — “inner child work” as su
 is barely studied, several of its components are well supported — and gives
 the literature.
 
-The full design document is in [`docs/KONZEPT.md`](docs/KONZEPT.md) (German).
+The full design document is in [`docs/CONCEPT.md`](docs/CONCEPT.md).
 
 ## Development
 
