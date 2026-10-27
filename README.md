@@ -1,5 +1,13 @@
 # Innenkind
 
+<p>
+  <img alt="Status: stable" src="https://img.shields.io/badge/status-stable-brightgreen">
+  <a href="https://github.com/TechnikWeber/Innenkind/actions/workflows/deploy.yml"><img alt="build" src="https://img.shields.io/github/actions/workflow/status/TechnikWeber/Innenkind/deploy.yml?branch=main&label=build"></a>
+  <img alt="Platform: browser" src="https://img.shields.io/badge/platform-browser-blue">
+  <img alt="UI: English | Deutsch" src="https://img.shields.io/badge/UI-English%20%7C%20Deutsch-informational">
+  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-green"></a>
+</p>
+
 A guided, self-paced session with your inner child — in the browser, in German
 and English, and private by design. It is built like therapy sessions:
 arriving, understanding, gathering resources, tracing back, a personal
