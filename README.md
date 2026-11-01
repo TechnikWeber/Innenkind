@@ -21,6 +21,14 @@ closing with a letter and a plan for everyday life.
 > crisis. Crisis lines for DE, AT, CH and other countries are on the site's
 > *Help* page.
 
+<table>
+  <tr>
+    <td align="center" valign="top"><a href="docs/screenshots/home.png"><img src="docs/screenshots/home.png" width="270" alt="Innenkind start page: meeting the child you once were"></a><br>Start</td>
+    <td align="center" valign="top"><a href="docs/screenshots/exercises.png"><img src="docs/screenshots/exercises.png" width="270" alt="Exercise cards such as breathing, the vault and the butterfly hug"></a><br>Exercises to repeat</td>
+    <td align="center" valign="top"><a href="docs/screenshots/daily.png"><img src="docs/screenshots/daily.png" width="270" alt="Three minutes for your inner child: arriving with a breathing circle"></a><br>Daily ritual</td>
+  </tr>
+</table>
+
 ## What it does
 
 - **Thirteen phases, about two hours.** Preliminary talk, arriving,
