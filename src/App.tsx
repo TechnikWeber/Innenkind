@@ -28,7 +28,8 @@ function useDocumentTitle() {
       : route.name === 'background' ? t('navBackground')
       : route.name === 'help' ? t('navHelp')
       : t('navAbout');
-    document.title = `${t('appName')} – ${suffix}`;
+    // Weiche Trennzeichen aus den Titeln gehören nicht in die Titelleiste
+    document.title = `${t('appName')} – ${suffix}`.replace(/\u00AD/g, '');
   }, [route, t, lang]);
 }
 

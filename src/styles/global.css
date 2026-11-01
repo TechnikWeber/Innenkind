@@ -281,7 +281,8 @@ input:focus, textarea:focus, select:focus { outline: 2px solid var(--accent); ou
 .card > * { min-width: 0; }
 .card--raised { box-shadow: var(--shadow-sm); }
 .card--flat { background: var(--paper); }
-.card__title { font-size: var(--step-1); margin: 0; }
+/* min-width: 0, damit der Titel in der Flex-Zeile neben dem Chip schrumpfen und umbrechen darf */
+.card__title { font-size: var(--step-1); margin: 0; min-width: 0; }
 
 .callout {
   border: 1px solid var(--rule); border-left: 4px solid var(--ink-faint);

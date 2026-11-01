@@ -129,7 +129,8 @@ export const exercises: Exercise[] = [
   {
     id: 'schmetterling',
     kind: 'stabilize',
-    title: { de: 'Schmetterlingsumarmung', en: 'Butterfly hug' },
+    // Weiches Trennzeichen: Das lange Wort passt sonst nicht in die Übungskarte.
+    title: { de: 'Schmetterlings\u00ADumarmung', en: 'Butterfly hug' },
     minutes: 2,
     purpose: {
       de: 'Eine einfache, beruhigende Selbstberührung mit abwechselndem Klopfen. Hilft, wenn Gefühle hochkommen.',
